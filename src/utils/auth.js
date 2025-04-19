@@ -29,15 +29,15 @@ export const verifyRefreshToken = (token) => {
 export const setAuthCookies = (res, { accessToken, refreshToken }) => {
   // For Next.js App Router
   res.cookies.set('accessToken', accessToken, {
-    httpOnly: true,
+    httpOnly: false,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'strict',
-    maxAge: 900, // 15 minutes
+    maxAge: 10, // 10 seconds
     path: '/',
   });
   
   res.cookies.set('refreshToken', refreshToken, {
-    httpOnly: true,
+    httpOnly: false,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'strict',
     maxAge: 604800, // 7 days

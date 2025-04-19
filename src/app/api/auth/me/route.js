@@ -7,7 +7,7 @@ import { verifyAccessToken } from '@/utils/auth';
 export async function GET() {
   try {
     const cookieStore = cookies();
-    const accessToken = cookieStore.get('accessToken')?.value;
+    const accessToken =  await cookieStore.get('accessToken')?.value;
 
     if (!accessToken) {
       return NextResponse.json(

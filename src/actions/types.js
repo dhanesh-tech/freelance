@@ -14,6 +14,11 @@ export const SIGN_IN_FAILURE = 'SIGN_IN_FAILURE';
 
 export const SIGN_OUT = 'SIGN_OUT';
 
+// Authentication check types
+export const CHECK_AUTH_REQUEST = 'CHECK_AUTH_REQUEST';
+export const CHECK_AUTH_SUCCESS = 'CHECK_AUTH_SUCCESS';
+export const CHECK_AUTH_FAILURE = 'CHECK_AUTH_FAILURE';
+
 // User action types
 export const FETCH_USER_REQUEST = 'FETCH_USER_REQUEST';
 export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS';
