@@ -13,7 +13,6 @@ const MAX_REFRESH_ATTEMPTS = 2;
 
 // Helper function to clear all auth cookies
 const clearAuthCookies = () => {
-  console.log('Clearing cookies');
   Cookies.remove('accessToken');
   Cookies.remove('refreshToken');
 };
@@ -22,13 +21,6 @@ const clearAuthCookies = () => {
 // Request interceptor
 api.interceptors.request.use(
   (config) => {
-    // Log request (useful for debugging)
-    console.log('Request:', {
-      method: config.method,
-      url: config.url,
-      data: config.data,
-      headers: config.headers,
-    });
 
     return config;
   },
@@ -43,10 +35,7 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => {
     // Log response (useful for debugging)
-    console.log('Response:', {
-      status: response.status,
-      data: response.data,
-    });
+   
 
     // You can transform the response data here if needed
     return response;
